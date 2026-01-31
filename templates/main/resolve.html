@@ -1,0 +1,438 @@
+{% extends "base.html" %}
+
+{% block title %}Problem Solving Resources - Customer Service Skills{% endblock %}
+
+{% block content %}
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #fbbc05 0%, #d18a00 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #fbbc05;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #fef7e0;
+        }
+        
+        h3 {
+            color: #d18a00;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .step-card {
+            background: #fef7e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid #fbbc05;
+        }
+        
+        .step-number {
+            background: #fbbc05;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #fbbc05;
+        }
+        
+        .case-title {
+            color: #d18a00;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .exercise-card {
+            background: #fef7e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .exercise-type {
+            color: #d18a00;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #fbbc05;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #d18a00;
+        }
+        
+        .btn-secondary {
+            background: #5f6368;
+        }
+        
+        .btn-secondary:hover {
+            background: #3c4043;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .framework-grid, .case-grid, .exercise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Problem Solving Resources</h1>
+            <p class="subtitle">Develop systematic approaches to resolve customer issues effectively and efficiently</p>
+        </header>
+        
+        <div class="resource-card">
+            <h2>1. Problem Solving Framework</h2>
+            <p>A step-by-step model for resolving customer issues using a structured, five-phase approach.</p>
+            
+            <div class="framework-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <strong>Identify</strong>
+                    <p>Clearly define the problem and gather relevant information</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <strong>Analyze</strong>
+                    <p>Break down the problem, identify root causes and contributing factors</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <strong>Ideate</strong>
+                    <p>Brainstorm multiple potential solutions without judgment</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <strong>Implement</strong>
+                    <p>Execute chosen solution with clear communication and steps</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <strong>Evaluate</strong>
+                    <p>Assess solution effectiveness and gather feedback for improvement</p>
+                </div>
+            </div>
+            
+            <h3>Printable Flowchart Features:</h3>
+            <ul>
+                <li>Decision points at each phase</li>
+                <li>Escalation pathway indicators</li>
+                <li>Customer communication checkpoints</li>
+                <li>Time allocation guidelines</li>
+                <li>Success measurement criteria</li>
+            </ul>
+            
+            <h3>Example Case Walkthrough:</h3>
+            <div class="case-card">
+                <p><strong>Situation:</strong> Customer reports recurring billing error for three months</p>
+                <p><strong>Framework Application:</strong></p>
+                <ol>
+                    <li><strong>Identify:</strong> Gather account details, billing history, error patterns</li>
+                    <li><strong>Analyze:</strong> Identify system synchronization issue between platforms</li>
+                    <li><strong>Ideate:</strong> Solutions: manual correction, system patch, process change</li>
+                    <li><strong>Implement:</strong> Apply manual fix + initiate system update</li>
+                    <li><strong>Evaluate:</strong> Monitor next billing cycle + customer feedback</li>
+                </ol>
+            </div>
+            
+            <a href="#" class="btn">Download Framework & Flowchart</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>2. Case Studies Library</h2>
+            <p>A curated set of five real-world customer service case studies with analysis and key takeaways.</p>
+            
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-title">Case Study 1: Technical Product Failure</div>
+                    <p><strong>Challenge:</strong> Widespread software bug affecting 500+ enterprise clients</p>
+                    <p><strong>Solution:</strong> Transparent communication + temporary workaround + accelerated patch</p>
+                    <p><strong>Takeaway:</strong> Proactive communication reduces frustration during crises</p>
+                </div>
+                <div class="case-card">
+                    <div class="case-title">Case Study 2: Shipping Delay Crisis</div>
+                    <p><strong>Challenge:</strong> Logistics breakdown during holiday season peak</p>
+                    <p><strong>Solution:</strong> Customer segmentation + prioritized solutions + compensation framework</p>
+                    <p><strong>Takeaway:</strong> Tiered response strategies optimize limited resources</p>
+                </div>
+                <div class="case-card">
+                    <div class="case-title">Case Study 3: Billing System Error</div>
+                    <p><strong>Challenge:</strong> Automated system double-charging 2,000 customers</p>
+                    <p><strong>Solution:</strong> Immediate refund automation + personalized apologies + system audit</p>
+                    <p><strong>Takeaway:</strong> Automated solutions with human touch maintain trust</p>
+                </div>
+                <div class="case-card">
+                    <div class="case-title">Case Study 4: Miscommunication Escalation</div>
+                    <p><strong>Challenge:</strong> Policy misunderstanding leading to social media backlash</p>
+                    <p><strong>Solution:</strong> Policy clarification + empowered exceptions + public response strategy</p>
+                    <p><strong>Takeaway:</strong> Clear communication prevents escalation more than rigid policy adherence</p>
+                </div>
+                <div class="case-card">
+                    <div class="case-title">Case Study 5: Complex Enterprise Integration</div>
+                    <p><strong>Challenge:</strong> Multi-department coordination failure for key account</p>
+                    <p><strong>Solution:</strong> Cross-functional task force + single point of contact + regular syncs</p>
+                    <p><strong>Takeaway:</strong> Structural solutions often needed for complex, recurring issues</p>
+                </div>
+            </div>
+            
+            <h3>Case Study Analysis Framework:</h3>
+            <ol>
+                <li><strong>Background Context:</strong> Company, customer, and situation overview</li>
+                <li><strong>Problem Analysis:</strong> Root cause identification and impact assessment</li>
+                <li><strong>Solution Steps:</strong> Detailed implementation timeline and actions</li>
+                <li><strong>Key Takeaways:</strong> Universal principles and adaptable strategies</li>
+                <li><strong>Application Exercises:</strong> How to apply learnings to similar situations</li>
+            </ol>
+            
+            <a href="#" class="btn">Access Case Studies Library</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>3. Critical Thinking Exercises</h2>
+            <p>A workbook of ten short exercises designed to strengthen analytical thinking and decision-making under pressure.</p>
+            
+            <div class="exercise-grid">
+                <div class="exercise-card">
+                    <div class="exercise-type">Pattern Recognition</div>
+                    <p>Identify recurring issues from customer complaint datasets</p>
+                    <p><strong>Skills Developed:</strong> Data analysis, trend identification, proactive thinking</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-type">Assumption Testing</div>
+                    <p>Challenge common customer service assumptions with evidence</p>
+                    <p><strong>Skills Developed:</strong> Critical evaluation, evidence-based decision making</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-type">Scenario Analysis</div>
+                    <p>Evaluate multiple solutions for complex customer scenarios</p>
+                    <p><strong>Skills Developed:</strong> Comparative analysis, consequence evaluation</p>
+                </div>
+                <div class="exercise-card">
+                    <div class="exercise-type">Decision-Making Under Pressure</div>
+                    <p>Timed exercises with limited information and competing priorities</p>
+                    <p><strong>Skills Developed:</strong> Prioritization, stress management, quick analysis</p>
+                </div>
+            </div>
+            
+            <h3>Workbook Features:</h3>
+            <ul>
+                <li>10 progressively challenging exercises</li>
+                <li>Answer keys with detailed explanations</li>
+                <li>Reflection prompts after each exercise</li>
+                <li>Skill development tracking sheet</li>
+                <li>Application planning templates</li>
+            </ul>
+            
+            <h3>Sample Exercise:</h3>
+            <div class="case-card">
+                <p><strong>Scenario:</strong> You receive three simultaneous urgent requests:
+                1) VIP customer with system crash during presentation
+                2) Compliance department reporting potential data breach
+                3) Team member needing immediate approval for customer refund exception</p>
+                
+                <p><strong>Exercise Tasks:</strong></p>
+                <ol>
+                    <li>Prioritize the requests with justification</li>
+                    <li>Identify what additional information you need for each</li>
+                    <li>Outline your immediate action plan for the first 15 minutes</li>
+                    <li>Describe how you would communicate with each stakeholder</li>
+                </ol>
+            </div>
+            
+            <a href="#" class="btn">Download Critical Thinking Workbook</a>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="communicate.html" class="btn">← Previous: Communication Skills</a>
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+        
+        <footer>
+        <p>&copy; 2025 Skills Templates. All Rights Reserved.</p>
+        <p class="footer-links">
+            <a href="{{ url_for('home') }}">Home</a> | 
+            <a href="{{ url_for('listen') }}">Active Listening Tips</a> | 
+            <a href="{{ url_for('empathise') }}">Emotional Intelligence</a> | 
+            <a href="{{ url_for('communicate') }}">Communication Tips</a> |
+            <a href="{{ url_for('resolve') }}">Resolution Tips</a> |
+            <a href="{{ url_for('test') }}">Quiz</a> | 
+        </p>
+        <p class="footer-note">
+            <i class="fas fa-heart"></i> Made with purpose by Kareemat Adebisi
+        </p>
+    </footer>
+        
+    <!-- Main scripts -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    <!-- Inline styles for icons if Font Awesome fails -->
+    <style>
+        .fa, .fas, .fab {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        /* Fallback if Font Awesome doesn't load */
+        .fa-sync-alt::before { content: '🔄'; }
+        .fa-pause::before { content: '⏸️'; }
+        .fa-info-circle::before { content: 'ℹ️'; }
+        .fa-lock::before { content: '🔒'; }
+        .fa-play-circle::before { content: '▶️'; }
+        .fa-arrow-left::before { content: '←'; }
+        .fa-arrow-right::before { content: '→'; }
+        .fa-chart-bar::before { content: '📊'; }
+        .fa-lightbulb::before { content: '💡'; }
+        .fa-calendar::before { content: '📅'; }
+        .fa-hashtag::before { content: '#'; }
+        .fa-star::before { content: '⭐'; }
+        .fa-seedling::before { content: '🌱'; }
+        .fa-bullseye::before { content: '🎯'; }
+        .fa-paw::before { content: '🐾'; }
+        .fa-road::before { content: '🛣️'; }
+        .fa-book-open::before { content: '📖'; }
+        .fa-calendar-check::before { content: '📅'; }
+        .fa-redo::before { content: '🔄'; }
+        .fa-download::before { content: '📥'; }
+        .fa-print::before { content: '🖨️'; }
+        .fa-check-circle::before { content: '✅'; }
+        .fa-heart::before { content: '❤️'; }
+        .fa-arrow-up::before { content: '↑'; }
+        .fa-arrow-down::before { content: '↓'; }
+        .fa-users::before { content: '👥'; }
+        .fa-clock::before { content: '⏰'; }
+        .fa-briefcase::before { content: '💼'; }
+        .fa-graduation-cap::before { content: '🎓'; }
+        .fa-handshake::before { content: '🤝'; }
+        .fa-chart-line::before { content: '📈'; }
+        .fa-tools::before { content: '🛠️'; }
+    </style>
+    {% endblock %}
