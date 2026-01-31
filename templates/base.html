@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill.io - Learn Fun & Quirky Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B8B;
+            --secondary: #5CE1E6;
+            --accent: #FFD166;
+            --dark: #2A2D43;
+            --light: #F9F7FE;
+            --success: #06D6A0;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Comic Neue', cursive;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Content Area */
+        .content {
+            min-height: calc(100vh - 300px);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-container {
+                padding: 15px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo i {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Base Template Structure -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-hat-wizard"></i>
+                Skill<span>.io</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Instructors</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#" class="btn btn-accent" style="padding: 8px 20px;">Start Learning</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Home Page Content -->
+        <div id="home-page">
+            <section class="hero">
+                <div class="container">
+                    <div style="display: flex; align-items: center; min-height: 80vh; padding: 60px 0;">
+                        <div style="flex: 1;">
+                            <h1 style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px;">
+                                Learn <span style="color: var(--primary);">Fun</span>, 
+                                <span style="color: var(--secondary);">Quirky</span> & 
+                                <span style="color: var(--accent);">Awesome</span> Skills
+                            </h1>
+                            <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 600px;">
+                                From sewing and knitting to emotional intelligence and beauty secrets, 
+                                Skill.io is your playground for learning unconventional skills that make life more interesting.
+                            </p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="#" class="btn">Explore Skills</a>
+                                <a href="about.html" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <div style="position: relative; display: inline-block;">
+                                <div style="width: 400px; height: 400px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; top: 20px; left: 20px; background-color: white; width: 100px; height: 100px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                                        <i class="fas fa-sewing-needle" style="font-size: 3rem; color: var(--primary);"></i>
+                                    </div>
+                                    <div style="position: absolute; top: 150px; right: 30px; background-color: white; width: 120px; height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                                        <i class="fas fa-brain" style="font-size: 3rem; color: var(--secondary);"></i>
+                                    </div>
+                                    <div style="position: absolute; bottom: 50px; left: 50px; background-color: white; width: 130px; height: 130px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                                        <i class="fas fa-palette" style="font-size: 3.5rem; color: var(--accent);"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section style="background-color: white; padding: 80px 0;">
+                <div class="container">
+                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">
+                        Our <span style="color: var(--primary);">Quirky</span> Categories
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;">
+                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                            <div style="width: 80px; height: 80px; background-color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <i class="fas fa-tshirt" style="font-size: 2.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">Crafty Skills</h3>
+                            <p>Sewing, knitting, crochet, embroidery, and other hands-on creative skills.</p>
+                        </div>
+                        
+                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                            <div style="width: 80px; height: 80px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <i class="fas fa-brain" style="font-size: 2.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">Mind & EQ</h3>
+                            <p>Emotional intelligence, mindfulness, communication skills, and self-awareness.</p>
+                        </div>
+                        
+                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                            <div style="width: 80px; height: 80px; background-color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <i class="fas fa-spa" style="font-size: 2.5rem; color: var(--dark);"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">Beauty & Self-Care</h3>
+                            <p>Skincare routines, makeup techniques, hair styling, and wellness practices.</p>
+                        </div>
+                        
+                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                            <div style="width: 80px; height: 80px; background-color: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                <i class="fas fa-utensils" style="font-size: 2.5rem; color: white;"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">Fun Food Skills</h3>
+                            <p>Creative cooking, baking, cocktail mixing, and food presentation techniques.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#" class="btn">View All Categories</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section style="padding: 80px 0;">
+                <div class="container">
+                    <div style="display: flex; align-items: center; gap: 60px;">
+                        <div style="flex: 1;">
+                            <h2 style="font-size: 2.5rem; margin-bottom: 25px;">
+                                Why <span style="color: var(--primary);">Skill.io</span> is Different
+                            </h2>
+                            <p style="margin-bottom: 20px; font-size: 1.1rem;">
+                                We believe learning should be fun, engaging, and a little bit quirky! Unlike traditional learning platforms, we focus on skills that spark joy, boost creativity, and add unexpected value to your life.
+                            </p>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.2rem; margin-right: 10px;"></i>
+                                    <span>Learn at your own pace with bite-sized, engaging lessons</span>
+                                </li>
+                                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.2rem; margin-right: 10px;"></i>
+                                    <span>Connect with a community of fellow quirky learners</span>
+                                </li>
+                                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                                    <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.2rem; margin-right: 10px;"></i>
+                                    <span>Get certified in skills that make you stand out</span>
+                                </li>
+                            </ul>
+                            <div style="margin-top: 30px;">
+                                <a href="about.html" class="btn btn-secondary">Our Story</a>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="background-color: var(--secondary); border-radius: 20px; padding: 40px; color: var(--dark); box-shadow: 0 15px 30px rgba(92, 225, 230, 0.2);">
+                                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Join Our Community</h3>
+                                <p style="margin-bottom: 25px;">
+                                    "Skill.io helped me discover my passion for knitting cute animal hats. Now I run a small Etsy shop alongside my day job!" 
+                                </p>
+                                <div style="display: flex; align-items: center;">
+                                    <div style="width: 60px; height: 60px; background-color: var(--primary); border-radius: 50%; margin-right: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                        AJ
+                                    </div>
+                                    <div>
+                                        <h4 style="margin-bottom: 5px;">Alex Johnson</h4>
+                                        <p style="opacity: 0.8;">Knitting Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- About Page Content (Initially Hidden) -->
+        <div id="about-page" style="display: none;">
+            <section class="hero" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 100px 0 80px;">
+                <div class="container">
+                    <h1 style="font-size: 3.5rem; text-align: center; margin-bottom: 20px;">Our Quirky Story</h1>
+                    <p style="font-size: 1.3rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                        Skill.io was born from a simple idea: learning should be fun, engaging, and a little bit unexpected.
+                    </p>
+                </div>
+            </section>
+            
+            <section style="padding: 80px 0;">
+                <div class="container">
+                    <div style="display: flex; align-items: center; gap: 60px; margin-bottom: 80px;">
+                        <div style="flex: 1;">
+                            <h2 style="font-size: 2.5rem; margin-bottom: 25px;">
+                                How It All <span style="color: var(--primary);">Started</span>
+                            </h2>
+                            <p style="margin-bottom: 20px;">
+                                In 2020, our founder, Maya, tried to learn knitting from a traditional online course. She found the experience dry, boring, and... well, not fun at all. She wondered: why can't learning new skills be as engaging as scrolling through social media or playing a game?
+                            </p>
+                            <p style="margin-bottom: 20px;">
+                                That's when the idea for Skill.io was born. We started with just three courses: "Knitting for Complete Beginners," "Emotional Intelligence 101," and "Everyday Makeup Magic." Today, we offer over 200 quirky skills taught by passionate experts.
+                            </p>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <div style="width: 300px; height: 300px; background-color: var(--accent); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-lightbulb" style="font-size: 8rem; color: var(--dark);"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 60px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Our <span style="color: var(--secondary);">Core Values</span></h2>
+                        <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
+                            These principles guide everything we do at Skill.io, from course creation to community building.
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                            <div style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                                <div style="width: 70px; height: 70px; background-color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                    <i class="fas fa-laugh-beam" style="font-size: 2rem; color: white;"></i>
+                                </div>
+                                <h3 style="margin-bottom: 15px;">Fun First</h3>
+                                <p>If it's not enjoyable, you won't stick with it. We design all our courses to be engaging and delightful.</p>
+                            </div>
+                            
+                            <div style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                                <div style="width: 70px; height: 70px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                    <i class="fas fa-users" style="font-size: 2rem; color: white;"></i>
+                                </div>
+                                <h3 style="margin-bottom: 15px;">Community Focused</h3>
+                                <p>Learning is better together. Our community of quirky learners supports and inspires each other.</p>
+                            </div>
+                            
+                            <div style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                                <div style="width: 70px; height: 70px; background-color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                    <i class="fas fa-star" style="font-size: 2rem; color: var(--dark);"></i>
+                                </div>
+                                <h3 style="margin-bottom: 15px;">Quality Quirkiness</h3>
+                                <p>We maintain high standards while embracing the unconventional and unexpected in skill teaching.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: var(--light); border-radius: 30px; padding: 60px; text-align: center;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Learn Something <span style="color: var(--primary);">Quirky</span>?</h2>
+                        <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">
+                            Join over 500,000 learners who are adding fun, unexpected skills to their lives with Skill.io.
+                        </p>
+                        <a href="#" class="btn" style="font-size: 1.2rem; padding: 15px 40px;">Start Your First Skill</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Skill.io</h3>
+                <p>Your playground for learning fun, quirky, and awesome skills that make life more interesting.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Crafty Skills</a></li>
+                    <li><a href="#">Mind & EQ</a></li>
+                    <li><a href="#">Beauty & Self-Care</a></li>
+                    <li><a href="#">Fun Food Skills</a></li>
+                    <li><a href="#">DIY & Home</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 Skill.io. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--primary);"></i> for quirky learners everywhere.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Simple page routing simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current page from URL or default to home
+            const path = window.location.pathname;
+            const page = path.includes('about') ? 'about' : 'home';
+            
+            // Show the appropriate page
+            showPage(page);
+            
+            // Update navigation active state
+            updateNavActiveState(page);
+            
+            // Handle navigation clicks
+            document.querySelectorAll('a[href="index.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showPage('home');
+                    updateNavActiveState('home');
+                    history.pushState({}, '', 'index.html');
+                });
+            });
+            
+            document.querySelectorAll('a[href="about.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showPage('about');
+                    updateNavActiveState('about');
+                    history.pushState({}, '', 'about.html');
+                });
+            });
+        });
+        
+        function showPage(page) {
+            // Hide all pages
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('about-page').style.display = 'none';
+            
+            // Show selected page
+            if (page === 'home') {
+                document.getElementById('home-page').style.display = 'block';
+            } else if (page === 'about') {
+                document.getElementById('about-page').style.display = 'block';
+            }
+        }
+        
+        function updateNavActiveState(page) {
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current page link
+            if (page === 'home') {
+                document.querySelector('.nav-links a[href="index.html"]').classList.add('active');
+            } else if (page === 'about') {
+                document.querySelector('.nav-links a[href="about.html"]').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
