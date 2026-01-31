@@ -1,0 +1,354 @@
+{% extends "base.html" %}
+
+{% block title %}Active Listening Resources - Customer Service Skills{% endblock %}
+
+{% block content %}
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e8f0fe;
+        }
+        
+        h3 {
+            color: #0d47a1;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .video-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #1a73e8;
+        }
+        
+        .video-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-link:hover {
+            text-decoration: underline;
+        }
+        
+        .video-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .module {
+            background: #e8f0fe;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #0d47a1;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Active Listening Resources</h1>
+            <p class="subtitle">Master the art of active listening to enhance customer understanding and build stronger relationships</p>
+        </header>
+        
+        <div class="resource-card">
+            <h2>1. Active Listening Techniques Guide</h2>
+            <p>A comprehensive guide outlining five key techniques for effective active listening in customer service.</p>
+            
+            <h3>Key Techniques:</h3>
+            <ol>
+                <li><strong>Maintaining Eye Contact:</strong> Showing engagement and focus through appropriate visual attention</li>
+                <li><strong>Using Verbal Affirmations:</strong> Providing feedback with phrases like "I see," "I understand," or "Go on"</li>
+                <li><strong>Paraphrasing:</strong> Restating customer concerns in your own words to confirm understanding</li>
+                <li><strong>Asking Clarifying Questions:</strong> Seeking specific details to avoid assumptions</li>
+                <li><strong>Summarizing Key Points:</strong> Recapping main issues to ensure nothing is missed</li>
+            </ol>
+            
+            <h3>Self-Assessment Checklist:</h3>
+            <ul>
+                <li>Do I allow customers to finish speaking without interrupting?</li>
+                <li>Do I regularly paraphrase to confirm understanding?</li>
+                <li>Do I ask open-ended questions to gather more information?</li>
+                <li>Do I maintain appropriate eye contact during conversations?</li>
+                <li>Do I summarize conversations before concluding?</li>
+            </ul>
+            
+            <a href="#" class="btn">Download Guide (PDF)</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>2. Listening Skills Video Course</h2>
+            <p>A 45-minute structured course with practical exercises and real-world applications.</p>
+            
+            <div class="module">
+                <h3>Module 1: Understanding the Importance</h3>
+                <p>Explore why active listening is critical for customer satisfaction and conflict resolution.</p>
+            </div>
+            
+            <div class="module">
+                <h3>Module 2: Practical Listening Exercises</h3>
+                <p>Role-play scenarios with guided feedback to develop listening skills.</p>
+            </div>
+            
+            <div class="module">
+                <h3>Module 3: Real Customer Scenarios</h3>
+                <p>Apply listening techniques to authentic customer service situations.</p>
+            </div>
+            
+            <p><strong>Includes:</strong> Downloadable transcripts and reflection questions</p>
+            
+            <h3>Recommended Videos:</h3>
+            <div class="video-grid">
+                <div class="video-item">
+                    <a href="https://youtu.be/MgG5h71V_Ks" target="_blank" class="video-link">The 4 Hidden Triggers That Make Customers Angry</a>
+                    <p class="video-description">Understanding root causes of customer frustration</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/qmB6KttY1k0" target="_blank" class="video-link">The Secret Script That Reduced Call Times</a>
+                    <p class="video-description">Efficient communication techniques</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/N-RbxxA8zNU" target="_blank" class="video-link">How to Demonstrate You Are Listening</a>
+                    <p class="video-description">Visible listening techniques</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/2P1zEH2YcY4" target="_blank" class="video-link">Active Listening Roleplay #1</a>
+                    <p class="video-description">Practical demonstration by Winning By Design</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/0qQsRwJxFus" target="_blank" class="video-link">Listening Skills Training Video</a>
+                    <p class="video-description">Workplace-focused listening techniques</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/7dQYLzW-7yU" target="_blank" class="video-link">The Secret to GREAT Customer Service</a>
+                    <p class="video-description">Simon Sinek on customer-centric service</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/tsop-M4HgN0" target="_blank" class="video-link">How to ACE a Call</a>
+                    <p class="video-description">Customer Success Skills Episode #4</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/rJKGL58YXE4" target="_blank" class="video-link">How to Structure a Role Play</a>
+                    <p class="video-description">Effective role-play methodology</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/Tfr7G0Wp1BA" target="_blank" class="video-link">How to Make it About the Customer</a>
+                    <p class="video-description">Ring Ring Roleplay #2</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/9Bcsv8kntDM" target="_blank" class="video-link">How to Handle Angry Customers</a>
+                    <p class="video-description">Ring Ring Roleplay Episode #8</p>
+                </div>
+            </div>
+            
+            <a href="#" class="btn">Access Full Course</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>3. Paraphrasing Practice Worksheet</h2>
+            <p>A printable worksheet featuring ten customer statements with paraphrasing practice scenarios.</p>
+            
+            <h3>Worksheet Features:</h3>
+            <ul>
+                <li>10 realistic customer service scenarios</li>
+                <li>Space to write paraphrased responses</li>
+                <li>Model answers for comparison</li>
+                <li>Feedback tips for improvement</li>
+                <li>Self-evaluation rubric</li>
+            </ul>
+            
+            <h3>Example Scenario:</h3>
+            <div class="module">
+                <p><strong>Customer Statement:</strong> "I've been waiting for three days for a response about my refund, and I keep getting passed from department to department. No one seems to know what's going with my case, and I'm getting really frustrated."</p>
+                <p><strong>Effective Paraphrase:</strong> "Let me make sure I understand correctly. You've been waiting three days for an update on your refund request, and you've had to contact multiple departments without getting a clear answer. This lack of information has been very frustrating for you."</p>
+            </div>
+            
+            <a href="#" class="btn">Download Worksheet</a>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="index.html" class="btn">Home</a>
+            <a href="empathise.html" class="btn">Next: Emotional Intelligence →</a>
+        </div>
+           
+        <footer>
+        <p>&copy; 2025 Skills Templates. All Rights Reserved.</p>
+        <p class="footer-links">
+            <a href="{{ url_for('home') }}">Home</a> | 
+            <a href="{{ url_for('listen') }}">Active Listening Tips</a> | 
+            <a href="{{ url_for('empathise') }}">Emotional Intelligence</a> | 
+            <a href="{{ url_for('communicate') }}">Communication Tips</a> |
+            <a href="{{ url_for('resolve') }}">Resolution Tips</a> |
+            <a href="{{ url_for('test') }}">Quiz</a> | 
+        </p>
+        <p class="footer-note">
+            <i class="fas fa-heart"></i> Made with purpose by Kareemat Adebisi
+        </p>
+    </footer>
+        
+    <!-- Main scripts -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    <!-- Inline styles for icons if Font Awesome fails -->
+    <style>
+        .fa, .fas, .fab {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        /* Fallback if Font Awesome doesn't load */
+        .fa-sync-alt::before { content: '🔄'; }
+        .fa-pause::before { content: '⏸️'; }
+        .fa-info-circle::before { content: 'ℹ️'; }
+        .fa-lock::before { content: '🔒'; }
+        .fa-play-circle::before { content: '▶️'; }
+        .fa-arrow-left::before { content: '←'; }
+        .fa-arrow-right::before { content: '→'; }
+        .fa-chart-bar::before { content: '📊'; }
+        .fa-lightbulb::before { content: '💡'; }
+        .fa-calendar::before { content: '📅'; }
+        .fa-hashtag::before { content: '#'; }
+        .fa-star::before { content: '⭐'; }
+        .fa-seedling::before { content: '🌱'; }
+        .fa-bullseye::before { content: '🎯'; }
+        .fa-paw::before { content: '🐾'; }
+        .fa-road::before { content: '🛣️'; }
+        .fa-book-open::before { content: '📖'; }
+        .fa-calendar-check::before { content: '📅'; }
+        .fa-redo::before { content: '🔄'; }
+        .fa-download::before { content: '📥'; }
+        .fa-print::before { content: '🖨️'; }
+        .fa-check-circle::before { content: '✅'; }
+        .fa-heart::before { content: '❤️'; }
+        .fa-arrow-up::before { content: '↑'; }
+        .fa-arrow-down::before { content: '↓'; }
+        .fa-users::before { content: '👥'; }
+        .fa-clock::before { content: '⏰'; }
+        .fa-briefcase::before { content: '💼'; }
+        .fa-graduation-cap::before { content: '🎓'; }
+        .fa-handshake::before { content: '🤝'; }
+        .fa-chart-line::before { content: '📈'; }
+        .fa-tools::before { content: '🛠️'; }
+    </style>
+    {% endblock %}
