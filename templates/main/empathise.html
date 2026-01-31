@@ -1,0 +1,393 @@
+{% extends "base.html" %}
+
+{% block title %}Emotional Intelligence Resources - Customer Service Skills{% endblock %}
+
+{% block content %}
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #34a853 0%, #0d652d 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #34a853;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e6f4ea;
+        }
+        
+        h3 {
+            color: #0d652d;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .assessment-item {
+            background: #f0f7f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #34a853;
+        }
+        
+        .day-plan {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .day-card {
+            background: #e6f4ea;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .day-number {
+            background: #34a853;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-weight: bold;
+        }
+        
+        .emotion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .emotion-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid #34a853;
+        }
+        
+        .emotion-type {
+            color: #0d652d;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #34a853;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #0d652d;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .day-plan, .emotion-grid, .assessment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emotional Intelligence Resources</h1>
+            <p class="subtitle">Develop empathy and emotional awareness to connect with customers on a deeper level</p>
+        </header>
+        
+        <div class="resource-card">
+            <h2>1. Emotional Intelligence Assessment</h2>
+            <p>A self-evaluation tool with 20 questions measuring five key components of emotional intelligence in customer service.</p>
+            
+            <div class="assessment-grid">
+                <div class="assessment-item">
+                    <h3>Self-Awareness</h3>
+                    <p>Recognizing and understanding your own emotions</p>
+                </div>
+                <div class="assessment-item">
+                    <h3>Self-Regulation</h3>
+                    <p>Managing and controlling emotional responses</p>
+                </div>
+                <div class="assessment-item">
+                    <h3>Motivation</h3>
+                    <p>Harnessing emotions to achieve goals</p>
+                </div>
+                <div class="assessment-item">
+                    <h3>Empathy</h3>
+                    <p>Understanding and sharing others' emotions</p>
+                </div>
+                <div class="assessment-item">
+                    <h3>Social Skills</h3>
+                    <p>Managing relationships effectively</p>
+                </div>
+            </div>
+            
+            <h3>Scoring Guide:</h3>
+            <ul>
+                <li><strong>80-100:</strong> Advanced emotional intelligence - Continue developing with advanced scenarios</li>
+                <li><strong>60-79:</strong> Proficient - Focus on specific areas for improvement</li>
+                <li><strong>40-59:</strong> Developing - Practice daily empathy exercises</li>
+                <li><strong>Below 40:</strong> Foundational - Begin with basic emotional recognition</li>
+            </ul>
+            
+            <a href="#" class="btn">Take Assessment</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>2. Empathy Building Exercises</h2>
+            <p>A 7-day exercise plan designed to enhance empathy through daily reflection and practice.</p>
+            
+            <div class="day-plan">
+                <div class="day-card">
+                    <div class="day-number">1</div>
+                    <strong>Active Listening Focus</strong>
+                    <p>Practice listening without interrupting or judging</p>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">2</div>
+                    <strong>Perspective Taking</strong>
+                    <p>Consider situations from customers' viewpoints</p>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">3</div>
+                    <strong>Emotion Labeling</strong>
+                    <p>Identify and name emotions in conversations</p>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">4</div>
+                    <strong>Validation Practice</strong>
+                    <p>Validate others' feelings without fixing</p>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">5</div>
+                    <strong>Non-Verbal Awareness</strong>
+                    <p>Focus on tone, pace, and body language cues</p>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">6</div>
+                    <strong>Reflective Journaling</strong>
+                    <p>Record empathy successes and challenges</p>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">7</div>
+                    <strong>Integration Day</strong>
+                    <p>Combine all techniques in role-play scenarios</p>
+                </div>
+            </div>
+            
+            <h3>Progress Tracker Features:</h3>
+            <ul>
+                <li>Daily reflection prompts</li>
+                <li>Empathy achievement log</li>
+                <li>Challenge identification</li>
+                <li>Growth measurement scale</li>
+                <li>Personalized improvement plan</li>
+            </ul>
+            
+            <a href="#" class="btn">Download Exercise Plan</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>3. Customer Emotion Recognition Guide</h2>
+            <p>A visual and written guide explaining common emotional cues in customer communication and response strategies.</p>
+            
+            <div class="emotion-grid">
+                <div class="emotion-card">
+                    <div class="emotion-type">Frustration/Anger</div>
+                    <p><strong>Cues:</strong> Sharp tone, raised voice, rapid speech, negative language</p>
+                    <p><strong>Response:</strong> Acknowledge feelings, apologize sincerely, focus on solution</p>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-type">Confusion/Uncertainty</div>
+                    <p><strong>Cues:</strong> Hesitant speech, repeated questions, "I don't understand" phrases</p>
+                    <p><strong>Response:</strong> Simplify explanations, check understanding, provide clear steps</p>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-type">Anxiety/Worry</div>
+                    <p><strong>Cues:</strong> Nervous tone, seeking reassurance, worst-case questions</p>
+                    <p><strong>Response:</strong> Provide reassurance, offer regular updates, be patient</p>
+                </div>
+                <div class="emotion-card">
+                    <div class="emotion-type">Satisfaction/Happiness</div>
+                    <p><strong>Cues:</strong> Positive language, relaxed tone, compliments, enthusiasm</p>
+                    <p><strong>Response:</strong> Express appreciation, reinforce positive experience, encourage loyalty</p>
+                </div>
+            </div>
+            
+            <h3>Empathetic Response Framework:</h3>
+            <ol>
+                <li><strong>Recognize:</strong> Identify the emotion being expressed</li>
+                <li><strong>Validate:</strong> Acknowledge the emotion as legitimate</li>
+                <li><strong>Empathize:</strong> Express understanding of their perspective</li>
+                <li><strong>Respond:</strong> Address both emotional and practical needs</li>
+                <li><strong>Follow-up:</strong> Check emotional state after resolution</li>
+            </ol>
+            
+            <a href="#" class="btn">Download Emotion Guide</a>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="listen.html" class="btn">← Previous: Active Listening</a>
+            <a href="communicate.html" class="btn">Next: Communication Skills →</a>
+        </div>
+        
+        <footer>
+        <p>&copy; 2025 Skills Templates. All Rights Reserved.</p>
+        <p class="footer-links">
+            <a href="{{ url_for('home') }}">Home</a> | 
+            <a href="{{ url_for('listen') }}">Active Listening Tips</a> | 
+            <a href="{{ url_for('empathise') }}">Emotional Intelligence</a> | 
+            <a href="{{ url_for('communicate') }}">Communication Tips</a> |
+            <a href="{{ url_for('resolve') }}">Resolution Tips</a> |
+            <a href="{{ url_for('test') }}">Quiz</a> | 
+        </p>
+        <p class="footer-note">
+            <i class="fas fa-heart"></i> Made with purpose by Kareemat Adebisi
+        </p>
+    </footer>
+        
+    <!-- Main scripts -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    <!-- Inline styles for icons if Font Awesome fails -->
+    <style>
+        .fa, .fas, .fab {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        /* Fallback if Font Awesome doesn't load */
+        .fa-sync-alt::before { content: '🔄'; }
+        .fa-pause::before { content: '⏸️'; }
+        .fa-info-circle::before { content: 'ℹ️'; }
+        .fa-lock::before { content: '🔒'; }
+        .fa-play-circle::before { content: '▶️'; }
+        .fa-arrow-left::before { content: '←'; }
+        .fa-arrow-right::before { content: '→'; }
+        .fa-chart-bar::before { content: '📊'; }
+        .fa-lightbulb::before { content: '💡'; }
+        .fa-calendar::before { content: '📅'; }
+        .fa-hashtag::before { content: '#'; }
+        .fa-star::before { content: '⭐'; }
+        .fa-seedling::before { content: '🌱'; }
+        .fa-bullseye::before { content: '🎯'; }
+        .fa-paw::before { content: '🐾'; }
+        .fa-road::before { content: '🛣️'; }
+        .fa-book-open::before { content: '📖'; }
+        .fa-calendar-check::before { content: '📅'; }
+        .fa-redo::before { content: '🔄'; }
+        .fa-download::before { content: '📥'; }
+        .fa-print::before { content: '🖨️'; }
+        .fa-check-circle::before { content: '✅'; }
+        .fa-heart::before { content: '❤️'; }
+        .fa-arrow-up::before { content: '↑'; }
+        .fa-arrow-down::before { content: '↓'; }
+        .fa-users::before { content: '👥'; }
+        .fa-clock::before { content: '⏰'; }
+        .fa-briefcase::before { content: '💼'; }
+        .fa-graduation-cap::before { content: '🎓'; }
+        .fa-handshake::before { content: '🤝'; }
+        .fa-chart-line::before { content: '📈'; }
+        .fa-tools::before { content: '🛠️'; }
+    </style>
+    {% endblock %}
