@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mug Philosophy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('home') }}" class="navbar-item">
+            <img src="{{ url_for('static', filename='images/mug.png') }}" alt="Mug Philosophy" class="logo">
+        </a>
+        <a href="{{ url_for('about') }}" class="navbar-item active">About</a>
+        <a href="{{ url_for('articles') }}" class="navbar-item">Articles</a>
+        <a href="{{ url_for('test') }}" class="navbar-item">Ultimate Test</a>
+        <a href="{{ url_for('contact') }}" class="navbar-item">Contact Us</a>
+    </nav>
+
+    <main>
+        <div class="container content-wrapper">
+            <div class="welcome-section">
+                <h1>Welcome to Mug Philosophy</h1>
+            </div>
+
+            <div class="flip-container-wrapper">
+                <div class="flip-container" id="about-card">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="front-content">
+                                <h2>Click to Learn More</h2>
+                                <p>Discover the Mug Philosophy</p>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="back-content">
+                                <h3>What is Mug Philosophy?</h3>
+                                <div class="philosophy-content">
+                                    <p>The "Mug Philosophy" is a powerful lens for diagnosing and fixing workplace culture, leadership, and personal performance. It's built on a simple, universal metaphor: the "Mug in the Sink."</p>
+                                    
+                                    <h4>Core Metaphor:</h4>
+                                    <p>A dirty mug left in a shared sink is more than a chore. It is a visible sign of deeper cultural issues, indicating a lack of ownership, respect for shared spaces, and collective discipline.</p>
+                                    
+                                    <h4>The Two Archetypes:</h4>
+                                    <ul>
+                                        <li><strong>The "Mug Washer"</strong>: A proactive problem-solver who leads by example, takes ownership of unassigned tasks, and builds effective systems.</li>
+                                        <li><strong>The "Mug Leaver"</strong>: A passive contributor who neglects shared responsibilities.</li>
+                                    </ul>
+                                    
+                                    <h4>Purpose:</h4>
+                                    <p>The philosophy focuses on understanding systems rather than assigning individual blame.</p>
+                                    
+                                    <h4>Key Principles:</h4>
+                                    <ul class="mug-list">
+                                        <li>Culture is shaped by a team's daily habits</li>
+                                        <li>True inclusion requires designing for diverse perspectives</li>
+                                        <li>Leadership involves serving the team</li>
+                                        <li>Your career is a "reputational contract"</li>
+                                        <li>Resilience is a discipline</li>
+                                    </ul>
+                                    <h4>Goal:</h4>
+                                    <p>Shift from merely identifying cultural issues to creating strategic, humane, and high-performing workplaces.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div>
+        <button id="back-to-top">↑</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mug Philosophy. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
