@@ -1,0 +1,410 @@
+{% extends "base.html" %}
+
+{% block title %}Communication Resources - Customer Service Skills{% endblock %}
+
+{% block content %}
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ea4335 0%, #b31408 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #ea4335;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #fce8e6;
+        }
+        
+        h3 {
+            color: #b31408;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .style-card {
+            background: #fef0ef;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid #ea4335;
+        }
+        
+        .style-title {
+            color: #b31408;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .template-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ea4335;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .video-item {
+            background: #fef0ef;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .video-link {
+            color: #ea4335;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-link:hover {
+            text-decoration: underline;
+        }
+        
+        .tone-dimension {
+            background: #fce8e6;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ea4335;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #b31408;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .style-grid, .template-grid, .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Communication Resources</h1>
+            <p class="subtitle">Master effective communication techniques to connect clearly and professionally with customers</p>
+        </header>
+        
+        <div class="resource-card">
+            <h2>1. Communication Style Guide</h2>
+            <p>An illustrated guide describing four primary communication styles with adaptation strategies for each customer type.</p>
+            
+            <div class="style-grid">
+                <div class="style-card">
+                    <div class="style-title">Analytical Style</div>
+                    <p><strong>Characteristics:</strong> Data-driven, logical, detailed, systematic</p>
+                    <p><strong>Adaptation Tips:</strong> Provide facts and figures, avoid emotional appeals, be precise</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-title">Amiable Style</div>
+                    <p><strong>Characteristics:</strong> Relationship-focused, supportive, cooperative, patient</p>
+                    <p><strong>Adaptation Tips:</strong> Build rapport, show empathy, avoid rushing</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-title">Expressive Style</div>
+                    <p><strong>Characteristics:</strong> Enthusiastic, creative, energetic, big-picture</p>
+                    <p><strong>Adaptation Tips:</strong> Show enthusiasm, focus on benefits, allow storytelling</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-title">Driver Style</div>
+                    <p><strong>Characteristics:</strong> Results-oriented, direct, decisive, efficient</p>
+                    <p><strong>Adaptation Tips:</strong> Be concise, focus on outcomes, respect their time</p>
+                </div>
+            </div>
+            
+            <h3>Adaptation Framework:</h3>
+            <ol>
+                <li><strong>Identify:</strong> Recognize the customer's communication style</li>
+                <li><strong>Match:</strong> Adjust your tone, pace, and content accordingly</li>
+                <li><strong>Connect:</strong> Build rapport using their preferred style</li>
+                <li><strong>Resolve:</strong> Communicate solutions in their language</li>
+            </ol>
+            
+            <a href="#" class="btn">Download Style Guide</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>2. Professional Email Templates</h2>
+            <p>A collection of 15 customizable email templates for common customer service scenarios.</p>
+            
+            <div class="template-grid">
+                <div class="template-card">
+                    <strong>Complaint Resolution</strong>
+                    <p>Empathetic response templates with apology frameworks</p>
+                </div>
+                <div class="template-card">
+                    <strong>Follow-up Communications</strong>
+                    <p>Check-in templates with personalization options</p>
+                </div>
+                <div class="template-card">
+                    <strong>Product Updates</strong>
+                    <p>Clear announcement templates with benefit focus</p>
+                </div>
+                <div class="template-card">
+                    <strong>Service Outage Notifications</strong>
+                    <p>Transparent communication during issues</p>
+                </div>
+                <div class="template-card">
+                    <strong>Thank You Messages</strong>
+                    <p>Appreciation templates for loyal customers</p>
+                </div>
+                <div class="template-card">
+                    <strong>Escalation Communications</strong>
+                    <p>Professional templates for complex issues</p>
+                </div>
+            </div>
+            
+            <h3>Tone Guidance Features:</h3>
+            <ul>
+                <li>Emotion-appropriate language selection</li>
+                <li>Formality level indicators</li>
+                <li>Personalization placeholder tags</li>
+                <li>Response time recommendations</li>
+                <li>Subject line optimization tips</li>
+            </ul>
+            
+            <a href="#" class="btn">Download Email Templates</a>
+        </div>
+        
+        <div class="resource-card">
+            <h2>3. Tone of Voice Training</h2>
+            <p>A comprehensive training module on how tone influences customer perception and relationship building.</p>
+            
+            <h3>How Tone Influences Customer Perception</h3>
+            <p>Tone of voice profoundly shapes customer perception, directly impacting trust, brand loyalty, and satisfaction by communicating empathy, professionalism, or enthusiasm.</p>
+            
+            <div class="tone-dimension">
+                <strong>Builds Trust and Credibility:</strong> A calm, knowledgeable, and empathetic tone reassures customers, making them feel valued and secure.
+            </div>
+            <div class="tone-dimension">
+                <strong>Shapes Brand Personality:</strong> Tone acts as the "human" element of a brand, defining whether a company is perceived as professional, casual, playful, or serious.
+            </div>
+            <div class="tone-dimension">
+                <strong>Influences Emotional Response:</strong> A conversational and enthusiastic tone creates a positive, memorable experience.
+            </div>
+            <div class="tone-dimension">
+                <strong>Resolves Conflict:</strong> A patient, empathetic, and controlled tone can de-escalate tension with upset customers.
+            </div>
+            <div class="tone-dimension">
+                <strong>Boosts Satisfaction and Loyalty:</strong> Consistent, positive communication strengthens customer relationships.
+            </div>
+            
+            <h3>Key Dimensions of Tone:</h3>
+            <ul>
+                <li>Funny vs. Serious</li>
+                <li>Formal vs. Casual</li>
+                <li>Respectful vs. Irreverent</li>
+                <li>Enthusiastic vs. Matter-of-Fact</li>
+            </ul>
+            
+            <h3>Tips for Managing Tone:</h3>
+            <ol>
+                <li><strong>Mirror Customer Tone:</strong> Match the level of formality, especially with upset customers</li>
+                <li><strong>"Smile" Over the Phone:</strong> Smiling while speaking improves vocal warmth</li>
+                <li><strong>Ensure Consistency:</strong> Maintain unified tone across all channels</li>
+            </ol>
+            
+            <h3>Training Videos:</h3>
+            <div class="video-grid">
+                <div class="video-item">
+                    <a href="https://youtu.be/eAf_imRE5a8" target="_blank" class="video-link">Customer Service: Tone of Voice</a>
+                    <p>Owen Fitzpatrick on tone management</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/qlevfyYfdkc" target="_blank" class="video-link">Tone of Voice in Customer Service</a>
+                    <p>Understanding with Unbabel</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/iAV2MTVAf4o" target="_blank" class="video-link">How to Master Your Tone</a>
+                    <p>Communication Skills for Professionals</p>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/PiNN-HmHu7A" target="_blank" class="video-link">9 Habits for Clearer Speaking</a>
+                    <p>Communication improvement techniques</p>
+                </div>
+            </div>
+            
+            <a href="#" class="btn">Access Tone Training</a>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="empathise.html" class="btn">← Previous: Emotional Intelligence</a>
+            <a href="resolve.html" class="btn">Next: Problem Solving →</a>
+        </div>
+
+        <footer>
+        <p>&copy; 2025 Skills Templates. All Rights Reserved.</p>
+        <p class="footer-links">
+            <a href="{{ url_for('home') }}">Home</a> | 
+            <a href="{{ url_for('listen') }}">Active Listening Tips</a> | 
+            <a href="{{ url_for('empathise') }}">Emotional Intelligence</a> | 
+            <a href="{{ url_for('communicate') }}">Communication Tips</a> |
+            <a href="{{ url_for('resolve') }}">Resolution Tips</a> |
+            <a href="{{ url_for('test') }}">Quiz</a> | 
+        </p>
+        <p class="footer-note">
+            <i class="fas fa-heart"></i> Made with purpose by Kareemat Adebisi
+        </p>
+    </footer>
+        
+    <!-- Main scripts -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    <!-- Inline styles for icons if Font Awesome fails -->
+    <style>
+        .fa, .fas, .fab {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        /* Fallback if Font Awesome doesn't load */
+        .fa-sync-alt::before { content: '🔄'; }
+        .fa-pause::before { content: '⏸️'; }
+        .fa-info-circle::before { content: 'ℹ️'; }
+        .fa-lock::before { content: '🔒'; }
+        .fa-play-circle::before { content: '▶️'; }
+        .fa-arrow-left::before { content: '←'; }
+        .fa-arrow-right::before { content: '→'; }
+        .fa-chart-bar::before { content: '📊'; }
+        .fa-lightbulb::before { content: '💡'; }
+        .fa-calendar::before { content: '📅'; }
+        .fa-hashtag::before { content: '#'; }
+        .fa-star::before { content: '⭐'; }
+        .fa-seedling::before { content: '🌱'; }
+        .fa-bullseye::before { content: '🎯'; }
+        .fa-paw::before { content: '🐾'; }
+        .fa-road::before { content: '🛣️'; }
+        .fa-book-open::before { content: '📖'; }
+        .fa-calendar-check::before { content: '📅'; }
+        .fa-redo::before { content: '🔄'; }
+        .fa-download::before { content: '📥'; }
+        .fa-print::before { content: '🖨️'; }
+        .fa-check-circle::before { content: '✅'; }
+        .fa-heart::before { content: '❤️'; }
+        .fa-arrow-up::before { content: '↑'; }
+        .fa-arrow-down::before { content: '↓'; }
+        .fa-users::before { content: '👥'; }
+        .fa-clock::before { content: '⏰'; }
+        .fa-briefcase::before { content: '💼'; }
+        .fa-graduation-cap::before { content: '🎓'; }
+        .fa-handshake::before { content: '🤝'; }
+        .fa-chart-line::before { content: '📈'; }
+        .fa-tools::before { content: '🛠️'; }
+    </style>
+    {% endblock %}
