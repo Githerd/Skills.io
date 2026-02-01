@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill.io - Learn Fun & Quirky Skills</title>
+    <title>Skills.io - Master Life's Essential Skills</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF6B8B;
-            --secondary: #5CE1E6;
-            --accent: #FFD166;
-            --dark: #2A2D43;
-            --light: #F9F7FE;
-            --success: #06D6A0;
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Comic Neue', cursive;
+            --primary: #8B5CF6;
+            --secondary: #10B981;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
         }
         
         * {
@@ -25,76 +25,49 @@
         }
         
         body {
-            font-family: var(--font-body);
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 700;
             color: var(--dark);
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
         
         /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        .header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
         
-        .header-container {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            font-family: var(--font-heading);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 2.2rem;
-        }
-        
-        .logo span {
-            color: var(--secondary);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .nav-links {
             display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
+            gap: 2rem;
         }
         
         .nav-links a {
-            font-weight: 600;
-            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
             transition: color 0.3s;
             position: relative;
         }
@@ -103,542 +76,980 @@
             color: var(--primary);
         }
         
-        .nav-links a.active {
-            color: var(--primary);
-        }
-        
-        .nav-links a.active:after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
             width: 100%;
-            height: 3px;
-            background-color: var(--accent);
-            border-radius: 3px;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
-            cursor: pointer;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 50px 0 20px;
-            margin-top: 60px;
+            padding: 6rem 2rem;
+            text-align: center;
         }
         
-        .footer-container {
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        /* ADVERTISEMENT COMPONENTS */
+        .premium-ad-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-ad-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .ad-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ad-header {
+            margin-bottom: 2rem;
+        }
+        
+        .ad-header h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ad-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
-        .footer-col h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+        .ad-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .social-icons {
-            display: flex;
-            margin-top: 15px;
-        }
-        
-        .social-icons a {
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: background-color 0.3s;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.5rem;
         }
         
-        .social-icons a:hover {
-            background-color: var(--primary);
-        }
-        
-        .copyright {
+        .ad-cta-section {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
+            border: 2px dashed rgba(255,255,255,0.3);
         }
         
-        /* Content Area */
-        .content {
-            min-height: calc(100vh - 300px);
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
+        .premium-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
             border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            border: none;
-            cursor: pointer;
+            font-size: 1.1rem;
             transition: all 0.3s;
-            font-family: var(--font-heading);
-            font-size: 1rem;
+            margin: 1rem 0;
         }
         
-        .btn:hover {
-            background-color: var(--dark);
+        .premium-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
-        .btn-secondary {
-            background-color: var(--secondary);
+        /* Sidebar Ad */
+        .sidebar-ad {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--accent);
         }
         
-        .btn-accent {
-            background-color: var(--accent);
-            color: var(--dark);
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .skill-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .skill-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .skill-content {
+            padding: 1.5rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .skill-tag {
+            background: var(--light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Content Layout */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        .skill-section {
+            margin-bottom: 4rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .ad-contact-footer {
+            background: var(--primary);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
         }
         
         /* Responsive */
-        @media (max-width: 992px) {
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px 0;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
             }
             
-            .nav-links.active {
-                display: flex;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            .nav-links li {
-                margin: 0;
-                text-align: center;
-                padding: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .header-container {
-                padding: 15px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .footer-container {
+            .ad-grid {
                 grid-template-columns: 1fr;
             }
             
-            .logo {
-                font-size: 1.5rem;
+            .main-content {
+                grid-template-columns: 1fr;
             }
             
-            .logo i {
-                font-size: 1.8rem;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Base Template Structure -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-hat-wizard"></i>
-                Skill<span>.io</span>
-            </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Instructors</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#" class="btn btn-accent" style="padding: 8px 20px;">Start Learning</a></li>
-            </ul>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Skills.io</div>
+            <nav class="nav-links">
+                <a href="#crafty">Crafty Skills</a>
+                <a href="#mind">Mind & EQ</a>
+                <a href="#beauty">Beauty & Self-Care</a>
+                <a href="#food">Fun Food Skills</a>
+                <a href="#pets">Pets</a>
+                <a href="#advertise">Advertise</a>
+            </nav>
         </div>
     </header>
 
-    <main class="content">
-        <!-- Home Page Content -->
-        <div id="home-page">
-            <section class="hero">
-                <div class="container">
-                    <div style="display: flex; align-items: center; min-height: 80vh; padding: 60px 0;">
-                        <div style="flex: 1;">
-                            <h1 style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px;">
-                                Learn <span style="color: var(--primary);">Fun</span>, 
-                                <span style="color: var(--secondary);">Quirky</span> & 
-                                <span style="color: var(--accent);">Awesome</span> Skills
-                            </h1>
-                            <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 600px;">
-                                From sewing and knitting to emotional intelligence and beauty secrets, 
-                                Skill.io is your playground for learning unconventional skills that make life more interesting.
-                            </p>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                <a href="#" class="btn">Explore Skills</a>
-                                <a href="about.html" class="btn btn-secondary">Learn More</a>
-                            </div>
-                        </div>
-                        <div style="flex: 1; text-align: center;">
-                            <div style="position: relative; display: inline-block;">
-                                <div style="width: 400px; height: 400px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; position: relative; overflow: hidden;">
-                                    <div style="position: absolute; top: 20px; left: 20px; background-color: white; width: 100px; height: 100px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                                        <i class="fas fa-sewing-needle" style="font-size: 3rem; color: var(--primary);"></i>
-                                    </div>
-                                    <div style="position: absolute; top: 150px; right: 30px; background-color: white; width: 120px; height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                                        <i class="fas fa-brain" style="font-size: 3rem; color: var(--secondary);"></i>
-                                    </div>
-                                    <div style="position: absolute; bottom: 50px; left: 50px; background-color: white; width: 130px; height: 130px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                                        <i class="fas fa-palette" style="font-size: 3.5rem; color: var(--accent);"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section style="background-color: white; padding: 80px 0;">
-                <div class="container">
-                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">
-                        Our <span style="color: var(--primary);">Quirky</span> Categories
-                    </h2>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;">
-                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                            <div style="width: 80px; height: 80px; background-color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                <i class="fas fa-tshirt" style="font-size: 2.5rem; color: white;"></i>
-                            </div>
-                            <h3 style="margin-bottom: 15px;">Crafty Skills</h3>
-                            <p>Sewing, knitting, crochet, embroidery, and other hands-on creative skills.</p>
-                        </div>
-                        
-                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                            <div style="width: 80px; height: 80px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                <i class="fas fa-brain" style="font-size: 2.5rem; color: white;"></i>
-                            </div>
-                            <h3 style="margin-bottom: 15px;">Mind & EQ</h3>
-                            <p>Emotional intelligence, mindfulness, communication skills, and self-awareness.</p>
-                        </div>
-                        
-                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                            <div style="width: 80px; height: 80px; background-color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                <i class="fas fa-spa" style="font-size: 2.5rem; color: var(--dark);"></i>
-                            </div>
-                            <h3 style="margin-bottom: 15px;">Beauty & Self-Care</h3>
-                            <p>Skincare routines, makeup techniques, hair styling, and wellness practices.</p>
-                        </div>
-                        
-                        <div style="background-color: var(--light); border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                            <div style="width: 80px; height: 80px; background-color: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                <i class="fas fa-utensils" style="font-size: 2.5rem; color: white;"></i>
-                            </div>
-                            <h3 style="margin-bottom: 15px;">Fun Food Skills</h3>
-                            <p>Creative cooking, baking, cocktail mixing, and food presentation techniques.</p>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 50px;">
-                        <a href="#" class="btn">View All Categories</a>
-                    </div>
-                </div>
-            </section>
-            
-            <section style="padding: 80px 0;">
-                <div class="container">
-                    <div style="display: flex; align-items: center; gap: 60px;">
-                        <div style="flex: 1;">
-                            <h2 style="font-size: 2.5rem; margin-bottom: 25px;">
-                                Why <span style="color: var(--primary);">Skill.io</span> is Different
-                            </h2>
-                            <p style="margin-bottom: 20px; font-size: 1.1rem;">
-                                We believe learning should be fun, engaging, and a little bit quirky! Unlike traditional learning platforms, we focus on skills that spark joy, boost creativity, and add unexpected value to your life.
-                            </p>
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 15px; display: flex; align-items: center;">
-                                    <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.2rem; margin-right: 10px;"></i>
-                                    <span>Learn at your own pace with bite-sized, engaging lessons</span>
-                                </li>
-                                <li style="margin-bottom: 15px; display: flex; align-items: center;">
-                                    <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.2rem; margin-right: 10px;"></i>
-                                    <span>Connect with a community of fellow quirky learners</span>
-                                </li>
-                                <li style="margin-bottom: 15px; display: flex; align-items: center;">
-                                    <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.2rem; margin-right: 10px;"></i>
-                                    <span>Get certified in skills that make you stand out</span>
-                                </li>
-                            </ul>
-                            <div style="margin-top: 30px;">
-                                <a href="about.html" class="btn btn-secondary">Our Story</a>
-                            </div>
-                        </div>
-                        <div style="flex: 1;">
-                            <div style="background-color: var(--secondary); border-radius: 20px; padding: 40px; color: var(--dark); box-shadow: 0 15px 30px rgba(92, 225, 230, 0.2);">
-                                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Join Our Community</h3>
-                                <p style="margin-bottom: 25px;">
-                                    "Skill.io helped me discover my passion for knitting cute animal hats. Now I run a small Etsy shop alongside my day job!" 
-                                </p>
-                                <div style="display: flex; align-items: center;">
-                                    <div style="width: 60px; height: 60px; background-color: var(--primary); border-radius: 50%; margin-right: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                                        AJ
-                                    </div>
-                                    <div>
-                                        <h4 style="margin-bottom: 5px;">Alex Johnson</h4>
-                                        <p style="opacity: 0.8;">Knitting Enthusiast</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Master Life's Essential Skills</h1>
+        <p>Learn practical skills that enrich your life, boost your confidence, and bring joy to everyday moments.</p>
         
-        <!-- About Page Content (Initially Hidden) -->
-        <div id="about-page" style="display: none;">
-            <section class="hero" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 100px 0 80px;">
-                <div class="container">
-                    <h1 style="font-size: 3.5rem; text-align: center; margin-bottom: 20px;">Our Quirky Story</h1>
-                    <p style="font-size: 1.3rem; text-align: center; max-width: 800px; margin: 0 auto;">
-                        Skill.io was born from a simple idea: learning should be fun, engaging, and a little bit unexpected.
-                    </p>
+        <!-- PREMIUM AD SPOT 1: Top of Hero -->
+        <div class="premium-ad-section" style="max-width: 800px; margin: 2rem auto;">
+            <div class="ad-label">
+                <i class="fas fa-crown"></i>
+                <span>Premium Partner Spotlight</span>
+            </div>
+            <div class="ad-content">
+                <h3>Your Brand Here</h3>
+                <p>Reach 50,000+ skill-seekers monthly. This premium placement guarantees maximum visibility.</p>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                    <p><i class="fas fa-chart-line"></i> <strong>Current Performance:</strong> 95% visibility rate | 3.5% average CTR</p>
                 </div>
-            </section>
-            
-            <section style="padding: 80px 0;">
-                <div class="container">
-                    <div style="display: flex; align-items: center; gap: 60px; margin-bottom: 80px;">
-                        <div style="flex: 1;">
-                            <h2 style="font-size: 2.5rem; margin-bottom: 25px;">
-                                How It All <span style="color: var(--primary);">Started</span>
-                            </h2>
-                            <p style="margin-bottom: 20px;">
-                                In 2020, our founder, Maya, tried to learn knitting from a traditional online course. She found the experience dry, boring, and... well, not fun at all. She wondered: why can't learning new skills be as engaging as scrolling through social media or playing a game?
-                            </p>
-                            <p style="margin-bottom: 20px;">
-                                That's when the idea for Skill.io was born. We started with just three courses: "Knitting for Complete Beginners," "Emotional Intelligence 101," and "Everyday Makeup Magic." Today, we offer over 200 quirky skills taught by passionate experts.
-                            </p>
-                        </div>
-                        <div style="flex: 1; text-align: center;">
-                            <div style="width: 300px; height: 300px; background-color: var(--accent); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-lightbulb" style="font-size: 8rem; color: var(--dark);"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin-bottom: 60px;">
-                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Our <span style="color: var(--secondary);">Core Values</span></h2>
-                        <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-                            These principles guide everything we do at Skill.io, from course creation to community building.
-                        </p>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                            <div style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                                <div style="width: 70px; height: 70px; background-color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                    <i class="fas fa-laugh-beam" style="font-size: 2rem; color: white;"></i>
-                                </div>
-                                <h3 style="margin-bottom: 15px;">Fun First</h3>
-                                <p>If it's not enjoyable, you won't stick with it. We design all our courses to be engaging and delightful.</p>
-                            </div>
-                            
-                            <div style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                                <div style="width: 70px; height: 70px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                    <i class="fas fa-users" style="font-size: 2rem; color: white;"></i>
-                                </div>
-                                <h3 style="margin-bottom: 15px;">Community Focused</h3>
-                                <p>Learning is better together. Our community of quirky learners supports and inspires each other.</p>
-                            </div>
-                            
-                            <div style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                                <div style="width: 70px; height: 70px; background-color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                                    <i class="fas fa-star" style="font-size: 2rem; color: var(--dark);"></i>
-                                </div>
-                                <h3 style="margin-bottom: 15px;">Quality Quirkiness</h3>
-                                <p>We maintain high standards while embracing the unconventional and unexpected in skill teaching.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background-color: var(--light); border-radius: 30px; padding: 60px; text-align: center;">
-                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Learn Something <span style="color: var(--primary);">Quirky</span>?</h2>
-                        <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">
-                            Join over 500,000 learners who are adding fun, unexpected skills to their lives with Skill.io.
-                        </p>
-                        <a href="#" class="btn" style="font-size: 1.2rem; padding: 15px 40px;">Start Your First Skill</a>
-                    </div>
-                </div>
-            </section>
+                <a href="mailto:advertising@skills.io?subject=Hero%20Ad%20Inquiry" class="premium-btn">
+                    <i class="fas fa-bullhorn"></i>
+                    Reserve This Premium Spot
+                </a>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-col">
-                <h3>Skill.io</h3>
-                <p>Your playground for learning fun, quirky, and awesome skills that make life more interesting.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content">
+        
+        <!-- Left Column: Content -->
+        <div class="content-column">
+            
+            <!-- PAGE 1: CRAFTY SKILLS -->
+            <section id="crafty" class="skill-section">
+                <h2 style="margin-bottom: 2rem; color: var(--primary);">
+                    <i class="fas fa-paint-brush"></i> Crafty Skills
+                </h2>
+                
+                <!-- AD SPOT 2: Between major sections -->
+                <div class="premium-ad-section" style="background: linear-gradient(135deg, #F97316, #EA580C);">
+                    <div class="ad-label" style="background: rgba(255,255,255,0.3);">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Strategic Advertising</span>
+                    </div>
+                    <div class="ad-grid">
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #F97316;">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>High Visibility</h4>
+                            <p>Positioned between popular content sections</p>
+                        </div>
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #F97316;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Targeted Reach</h4>
+                            <p>Craft & DIY enthusiast audience</p>
+                        </div>
+                    </div>
+                    <div class="ad-cta-section">
+                        <p><strong>Ideal for:</strong> Craft supplies, DIY kits, creative tools</p>
+                        <a href="mailto:advertising@skills.io?subject=Craft%20Section%20Ad" class="premium-btn" style="background: white; color: #F97316;">
+                            <i class="fas fa-shopping-cart"></i>
+                            Advertise Your Products
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-badge">Featured</div>
+                        <img src="https://images.unsplash.com/photo-1568668398265-615bfa26bf9b" alt="Sewing" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Sewing</h3>
+                            <p>From basic stitches to creating your own clothing</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Beginner</span>
+                                <span class="skill-tag">Advanced</span>
+                                <span class="skill-tag">Patterns</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1542779632-539b861ee8f9" alt="Knitting" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Knitting</h3>
+                            <p>Cozy creations from scarves to sweaters</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Wool</span>
+                                <span class="skill-tag">Patterns</span>
+                                <span class="skill-tag">Winter</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AD SPOT: Within skill cards -->
+                    <div class="skill-card" style="border: 3px solid var(--accent);">
+                        <div class="skill-badge" style="background: var(--primary);">Ad Space</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; color: white; padding: 2rem;">
+                                <i class="fas fa-ad" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <h3>Your Ad Here</h3>
+                                <p>Reach craft enthusiasts</p>
+                                <a href="mailto:advertising@skills.io" style="color: white; text-decoration: underline;">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1604176354204-92633abbc86f" alt="Embroidery" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Embroidery</h3>
+                            <p>Decorative stitching techniques</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Needlework</span>
+                                <span class="skill-tag">Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 2: MIND & EQ -->
+            <section id="mind" class="skill-section">
+                <h2 style="margin-bottom: 2rem; color: #10B981;">
+                    <i class="fas fa-brain"></i> Mind & EQ
+                </h2>
+                
+                <!-- AD SPOT: Video sponsorship spot -->
+                <div class="premium-ad-section" style="background: linear-gradient(135deg, #10B981, #059669);">
+                    <div class="ad-label" style="background: rgba(255,255,255,0.3);">
+                        <i class="fas fa-video"></i>
+                        <span>Video Sponsorship Available</span>
+                    </div>
+                    <h3>Sponsor Our Mindfulness Video Series</h3>
+                    <p>Your brand featured in high-engagement video content</p>
+                    <div style="display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <h4><i class="fas fa-play-circle"></i> Video Metrics</h4>
+                            <p>Average view duration: 8.5min<br>Completion rate: 78%</p>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <h4><i class="fas fa-user-friends"></i> Audience</h4>
+                            <p>Professionals seeking self-improvement<br>85% college educated</p>
+                        </div>
+                    </div>
+                    <a href="mailto:advertising@skills.io?subject=Video%20Sponsorship" class="premium-btn" style="background: white; color: #10B981;">
+                        <i class="fas fa-film"></i>
+                        Sponsor Content
+                    </a>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56" alt="Emotional Intelligence" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Emotional Intelligence</h3>
+                            <p>Develop self-awareness and empathy skills</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Self-awareness</span>
+                                <span class="skill-tag">Empathy</span>
+                                <span class="skill-tag">Relationships</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" alt="Mindfulness" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Mindfulness</h3>
+                            <p>Meditation and presence techniques</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Meditation</span>
+                                <span class="skill-tag">Focus</span>
+                                <span class="skill-tag">Calm</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Communication" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Communication Skills</h3>
+                            <p>Effective listening and expression</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Listening</span>
+                                <span class="skill-tag">Speaking</span>
+                                <span class="skill-tag">Conflict Resolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AD SPOT: Mid-page takeover -->
+            <div class="premium-ad-section" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED); text-align: center;">
+                <div class="ad-label" style="background: rgba(255,255,255,0.3); margin: 0 auto;">
+                    <i class="fas fa-chess-queen"></i>
+                    <span>Premium Takeover Available</span>
+                </div>
+                <h2>Full Page Takeover Opportunity</h2>
+                <p style="max-width: 600px; margin: 1rem auto;">Complete control of this high-traffic section for 24 hours</p>
+                <div style="display: inline-flex; align-items: center; gap: 2rem; margin: 2rem 0;">
+                    <div><i class="fas fa-calendar-star"></i> Select your date</div>
+                    <div><i class="fas fa-chart-pie"></i> Full analytics included</div>
+                    <div><i class="fas fa-gem"></i> Exclusive placement</div>
+                </div>
+                <a href="mailto:advertising@skills.io?subject=Page%20Takeover" class="premium-btn" style="background: white; color: #8B5CF6; font-size: 1.2rem; padding: 1.2rem 3rem;">
+                    <i class="fas fa-crown"></i>
+                    Book Takeover
+                </a>
+            </div>
+
+            <!-- PAGE 3: BEAUTY & SELF-CARE -->
+            <section id="beauty" class="skill-section">
+                <h2 style="margin-bottom: 2rem; color: #EC4899;">
+                    <i class="fas fa-spa"></i> Beauty & Self-Care
+                </h2>
+                
+                <!-- AD SPOT: Beauty section advertising -->
+                <div class="premium-ad-section" style="background: linear-gradient(135deg, #EC4899, #BE185D);">
+                    <div class="ad-label" style="background: rgba(255,255,255,0.3);">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Beauty Brand Advertising</span>
+                    </div>
+                    <div class="ad-grid">
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #EC4899;">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>High Visibility</h4>
+                            <p>Positioned in beauty & self-care section</p>
+                        </div>
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #EC4899;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Targeted Reach</h4>
+                            <p>Beauty, fashion, health enthusiast audience</p>
+                        </div>
+                    </div>
+                    <div class="ad-cta-section">
+                        <p><strong>Ideal for:</strong> Makeup, skincare, haircare, nails, wellness products</p>
+                        <a href="mailto:advertising@skills.io?subject=Beauty%20Section%20Ad" class="premium-btn" style="background: white; color: #EC4899;">
+                            <i class="fas fa-shopping-cart"></i>
+                            Advertise Beauty Products
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-badge">Trending</div>
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Skincare" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Skincare Routines</h3>
+                            <p>Daily routines for glowing, healthy skin</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Cleansing</span>
+                                <span class="skill-tag">Moisturizing</span>
+                                <span class="skill-tag">Anti-aging</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Makeup" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Makeup Techniques</h3>
+                            <p>Professional makeup application</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Lashes</span>
+                                <span class="skill-tag">Wigs</span>
+                                <span class="skill-tag">Foundation</span>
+                                <span class="skill-tag">Fashion</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035" alt="Hair" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Hair Styling</h3>
+                            <p>Braids, wigs, and natural hair care</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Braids</span>
+                                <span class="skill-tag">Wigs</span>
+                                <span class="skill-tag">4C Hair</span>
+                                <span class="skill-tag">Curly Hair</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AD SPOT: Within beauty cards -->
+                    <div class="skill-card" style="border: 3px solid #EC4899;">
+                        <div class="skill-badge" style="background: #EC4899;">Ad Space</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, #EC4899, #BE185D); display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; color: white; padding: 2rem;">
+                                <i class="fas fa-ad" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <h3>Your Beauty Brand Here</h3>
+                                <p>Reach beauty enthusiasts</p>
+                                <a href="mailto:advertising@skills.io" style="color: white; text-decoration: underline;">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1607773967209-6c879c220cda" alt="Nails" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Nails & Lashes</h3>
+                            <p>Nail art and lash extension techniques</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Nail Art</span>
+                                <span class="skill-tag">Lash Extensions</span>
+                                <span class="skill-tag">Manicure</span>
+                                <span class="skill-tag">Pedicure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" alt="Wellness" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Wellness Practices</h3>
+                            <p>Spa treatments and self-care rituals</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Acupuncture</span>
+                                <span class="skill-tag">Massage</span>
+                                <span class="skill-tag">Spa</span>
+                                <span class="skill-tag">Laser Treatments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 4: FUN FOOD SKILLS -->
+            <section id="food" class="skill-section">
+                <h2 style="margin-bottom: 2rem; color: #F59E0B;">
+                    <i class="fas fa-utensils"></i> Fun Food Skills
+                </h2>
+                
+                <!-- AD SPOT: Food section advertising -->
+                <div class="premium-ad-section" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                    <div class="ad-label" style="background: rgba(255,255,255,0.3);">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Food Industry Advertising</span>
+                    </div>
+                    <div class="ad-grid">
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #F59E0B;">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>High Visibility</h4>
+                            <p>Positioned in food & cooking section</p>
+                        </div>
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #F59E0B;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Targeted Reach</h4>
+                            <p>Foodies and home cooks audience</p>
+                        </div>
+                    </div>
+                    <div class="ad-cta-section">
+                        <p><strong>Ideal for:</strong> Kitchen tools, cookware, ingredients, appliances</p>
+                        <a href="mailto:advertising@skills.io?subject=Food%20Section%20Ad" class="premium-btn" style="background: white; color: #F59E0B;">
+                            <i class="fas fa-shopping-cart"></i>
+                            Advertise Food Products
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-badge">Popular</div>
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136" alt="Creative Cooking" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Creative Cooking</h3>
+                            <p>Innovative recipes and techniques</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Recipes</span>
+                                <span class="skill-tag">Techniques</span>
+                                <span class="skill-tag">Meal Prep</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187" alt="Baking" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Baking</h3>
+                            <p>From bread to pastries and desserts</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Bread</span>
+                                <span class="skill-tag">Pastries</span>
+                                <span class="skill-tag">Desserts</span>
+                                <span class="skill-tag">Cakes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AD SPOT: Within food cards -->
+                    <div class="skill-card" style="border: 3px solid #F59E0B;">
+                        <div class="skill-badge" style="background: #F59E0B;">Ad Space</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, #F59E0B, #D97706); display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; color: white; padding: 2rem;">
+                                <i class="fas fa-ad" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <h3>Your Food Brand Here</h3>
+                                <p>Reach food enthusiasts</p>
+                                <a href="mailto:advertising@skills.io" style="color: white; text-decoration: underline;">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Cocktails" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Cocktail Mixing</h3>
+                            <p>Classic and creative drink recipes</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Classic</span>
+                                <span class="skill-tag">Creative</span>
+                                <span class="skill-tag">Mocktails</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Food Presentation" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Food Presentation</h3>
+                            <p>Plating techniques for restaurant-quality dishes</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Plating</span>
+                                <span class="skill-tag">Garnishing</span>
+                                <span class="skill-tag">Presentation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 5: PETS -->
+            <section id="pets" class="skill-section">
+                <h2 style="margin-bottom: 2rem; color: #8B5CF6;">
+                    <i class="fas fa-paw"></i> Pets
+                </h2>
+                
+                <!-- AD SPOT: Pet section advertising -->
+                <div class="premium-ad-section" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
+                    <div class="ad-label" style="background: rgba(255,255,255,0.3);">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Pet Industry Advertising</span>
+                    </div>
+                    <div class="ad-grid">
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #8B5CF6;">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>High Visibility</h4>
+                            <p>Positioned in pet care section</p>
+                        </div>
+                        <div class="ad-feature">
+                            <div class="feature-icon" style="background: white; color: #8B5CF6;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Targeted Reach</h4>
+                            <p>Pet owners and animal lovers audience</p>
+                        </div>
+                    </div>
+                    <div class="ad-cta-section">
+                        <p><strong>Ideal for:</strong> Pet food, grooming supplies, toys, veterinary services</p>
+                        <a href="mailto:advertising@skills.io?subject=Pet%20Section%20Ad" class="premium-btn" style="background: white; color: #8B5CF6;">
+                            <i class="fas fa-shopping-cart"></i>
+                            Advertise Pet Products
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-badge">Essential</div>
+                        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7" alt="Pet Grooming" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Grooming</h3>
+                            <p>Proper grooming techniques for all pets</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Bathing</span>
+                                <span class="skill-tag">Brushing</span>
+                                <span class="skill-tag">Nail Trimming</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d" alt="Pet Nutrition" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Nutrition</h3>
+                            <p>Balanced diets for healthy pets</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Dog Food</span>
+                                <span class="skill-tag">Cat Food</span>
+                                <span class="skill-tag">Supplements</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AD SPOT: Within pet cards -->
+                    <div class="skill-card" style="border: 3px solid #8B5CF6;">
+                        <div class="skill-badge" style="background: #8B5CF6;">Ad Space</div>
+                        <div style="height: 200px; background: linear-gradient(135deg, #8B5CF6, #7C3AED); display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; color: white; padding: 2rem;">
+                                <i class="fas fa-ad" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <h3>Your Pet Brand Here</h3>
+                                <p>Reach pet owners</p>
+                                <a href="mailto:advertising@skills.io" style="color: white; text-decoration: underline;">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64" alt="Pet Videos" class="skill-image">
+                        <div class="skill-content">
+                            <h3>Pet Videos</h3>
+                            <p>Educational and entertaining animal content</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Training</span>
+                                <span class="skill-tag">Care</span>
+                                <span class="skill-tag">Entertainment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2" alt="Pet FAQs" class="skill-image">
+                        <div class="skill-content">
+                            <h3>FAQs</h3>
+                            <p>Answers to common pet care questions</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Health</span>
+                                <span class="skill-tag">Behavior</span>
+                                <span class="skill-tag">Care</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Column: Sidebar with Ads -->
+        <div class="sidebar">
+            <!-- AD SPOT: Sticky sidebar ad -->
+            <div class="sidebar-ad" style="position: sticky; top: 100px;">
+                <div class="ad-label" style="background: var(--accent); color: white; margin-bottom: 1rem;">
+                    <i class="fas fa-star"></i>
+                    <span>Featured Partner</span>
+                </div>
+                <div style="text-align: center; padding: 1rem;">
+                    <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem;">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h4>WellnessBrand.com</h4>
+                    <p style="font-size: 0.9rem; color: var(--gray); margin: 0.5rem 0;">Premium self-care products</p>
+                    <a href="#" style="display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 500; margin-top: 0.5rem;">
+                        Shop Now
+                    </a>
+                </div>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center;">
+                    <small style="color: var(--gray);">
+                        <i class="fas fa-ad"></i> Advertisement • 
+                        <a href="mailto:advertising@skills.io" style="color: var(--primary);">Your ad here</a>
+                    </small>
                 </div>
             </div>
-            
-            <div class="footer-col">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="#">Crafty Skills</a></li>
-                    <li><a href="#">Mind & EQ</a></li>
-                    <li><a href="#">Beauty & Self-Care</a></li>
-                    <li><a href="#">Fun Food Skills</a></li>
-                    <li><a href="#">DIY & Home</a></li>
+
+            <!-- AD SPOT: Newsletter sponsorship -->
+            <div class="sidebar-ad" style="background: linear-gradient(135deg, #EC4899, #BE185D); color: white;">
+                <div class="ad-label" style="background: rgba(255,255,255,0.3); margin-bottom: 1rem;">
+                    <i class="fas fa-envelope"></i>
+                    <span>Newsletter Sponsorship</span>
+                </div>
+                <h4>Sponsor Our Weekly Digest</h4>
+                <p style="font-size: 0.9rem; margin: 1rem 0;">Reach 25,000+ subscribers</p>
+                <a href="mailto:advertising@skills.io?subject=Newsletter%20Sponsorship" class="premium-btn" style="background: white; color: #EC4899; width: 100%; justify-content: center;">
+                    <i class="fas fa-mail-bulk"></i>
+                    Sponsor Newsletter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER with Advertising Contact -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>Skills.io</h3>
+                <p>Master life's essential skills</p>
+            </div>
+            <div>
+                <h4>For Advertisers</h4>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li><a href="mailto:advertising@skills.io" style="color: white; text-decoration: none;"><i class="fas fa-bullhorn"></i> Advertise with us</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;"><i class="fas fa-file-alt"></i> Media Kit</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;"><i class="fas fa-chart-bar"></i> Audience Insights</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-col">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Partners</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
+            <div>
+                <h4>Contact</h4>
+                <p>advertising@skills.io</p>
+                <p>+1 (555) 123-4567</p>
             </div>
         </div>
         
-        <div class="container">
-            <div class="copyright">
-                &copy; 2023 Skill.io. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--primary);"></i> for quirky learners everywhere.
+        <!-- AD SPOT: Footer premium ad -->
+        <div class="ad-contact-footer">
+            <h3>Ready to Reach Our Audience?</h3>
+            <p style="margin: 1rem 0;">We offer flexible advertising packages for every budget</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+                <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 10px;">
+                    <h5>Basic Package</h5>
+                    <p>Sidebar ads + Newsletter</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 10px;">
+                    <h5>Premium Package</h5>
+                    <p>Hero placement + Video</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 10px;">
+                    <h5>Enterprise</h5>
+                    <p>Full page takeover</p>
+                </div>
             </div>
+            <a href="mailto:advertising@skills.io?subject=Advertising%20Package%20Inquiry" class="premium-btn" style="background: white; color: var(--primary);">
+                <i class="fas fa-calendar-check"></i>
+                Schedule a Consultation
+            </a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2024 Skills.io. All rights reserved.</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-ad"></i> This site contains advertising placements</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Simple page routing simulation
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get current page from URL or default to home
-            const path = window.location.pathname;
-            const page = path.includes('about') ? 'about' : 'home';
-            
-            // Show the appropriate page
-            showPage(page);
-            
-            // Update navigation active state
-            updateNavActiveState(page);
-            
-            // Handle navigation clicks
-            document.querySelectorAll('a[href="index.html"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showPage('home');
-                    updateNavActiveState('home');
-                    history.pushState({}, '', 'index.html');
-                });
-            });
-            
-            document.querySelectorAll('a[href="about.html"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showPage('about');
-                    updateNavActiveState('about');
-                    history.pushState({}, '', 'about.html');
-                });
+        // Ad interaction tracking
+        document.querySelectorAll('.premium-btn, .ad-cta').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Track ad clicks (in production, use analytics)
+                console.log('Ad click tracked:', this.href);
+                
+                // Open in new tab
+                if(this.target === '_blank' || this.href.includes('mailto')) {
+                    return; // Let default behavior
+                }
+                e.preventDefault();
+                window.open(this.href, '_blank');
             });
         });
-        
-        function showPage(page) {
-            // Hide all pages
-            document.getElementById('home-page').style.display = 'none';
-            document.getElementById('about-page').style.display = 'none';
-            
-            // Show selected page
-            if (page === 'home') {
-                document.getElementById('home-page').style.display = 'block';
-            } else if (page === 'about') {
-                document.getElementById('about-page').style.display = 'block';
-            }
-        }
-        
-        function updateNavActiveState(page) {
-            // Remove active class from all nav links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
-            
-            // Add active class to current page link
-            if (page === 'home') {
-                document.querySelector('.nav-links a[href="index.html"]').classList.add('active');
-            } else if (page === 'about') {
-                document.querySelector('.nav-links a[href="about.html"]').classList.add('active');
-            }
-        }
+        });
     </script>
 </body>
 </html>
